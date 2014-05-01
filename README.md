@@ -1,4 +1,4 @@
-SHAPES
- 
-A game about geometry and multiple touch
+_Shapes_
+
+- A game about geometry and multiple touch
 

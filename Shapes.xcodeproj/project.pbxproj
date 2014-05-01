@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9EC8B6001912605500A06507 /* ShapesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC8B5FF1912605500A06507 /* ShapesView.m */; };
 		9EEB145E1901303D00C9BB41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB145D1901303D00C9BB41 /* Foundation.framework */; };
 		9EEB14601901303D00C9BB41 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB145F1901303D00C9BB41 /* CoreGraphics.framework */; };
 		9EEB14621901303D00C9BB41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB14611901303D00C9BB41 /* UIKit.framework */; };
@@ -21,6 +22,7 @@
 		9EEB147F1901303D00C9BB41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB14611901303D00C9BB41 /* UIKit.framework */; };
 		9EEB14871901303D00C9BB41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB14851901303D00C9BB41 /* InfoPlist.strings */; };
 		9EEB14891901303D00C9BB41 /* ShapesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB14881901303D00C9BB41 /* ShapesTests.m */; };
+		9EEB149A19016D9600C9BB41 /* ShapesPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB149919016D9600C9BB41 /* ShapesPath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9EC8B5FE1912605500A06507 /* ShapesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapesView.h; sourceTree = "<group>"; };
+		9EC8B5FF1912605500A06507 /* ShapesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapesView.m; sourceTree = "<group>"; };
 		9EEB145A1901303D00C9BB41 /* Shapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EEB145D1901303D00C9BB41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9EEB145F1901303D00C9BB41 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +57,8 @@
 		9EEB14841901303D00C9BB41 /* ShapesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShapesTests-Info.plist"; sourceTree = "<group>"; };
 		9EEB14861901303D00C9BB41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EEB14881901303D00C9BB41 /* ShapesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapesTests.m; sourceTree = "<group>"; };
+		9EEB149819016D9600C9BB41 /* ShapesPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapesPath.h; sourceTree = "<group>"; };
+		9EEB149919016D9600C9BB41 /* ShapesPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapesPath.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				9EEB146F1901303D00C9BB41 /* Main.storyboard */,
 				9EEB14721901303D00C9BB41 /* ShapesViewController.h */,
 				9EEB14731901303D00C9BB41 /* ShapesViewController.m */,
+				9EC8B5FE1912605500A06507 /* ShapesView.h */,
+				9EC8B5FF1912605500A06507 /* ShapesView.m */,
+				9EEB149819016D9600C9BB41 /* ShapesPath.h */,
+				9EEB149919016D9600C9BB41 /* ShapesPath.m */,
 				9EEB14751901303D00C9BB41 /* Images.xcassets */,
 				9EEB14641901303D00C9BB41 /* Supporting Files */,
 			);
@@ -251,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EEB14741901303D00C9BB41 /* ShapesViewController.m in Sources */,
+				9EC8B6001912605500A06507 /* ShapesView.m in Sources */,
 				9EEB146E1901303D00C9BB41 /* ShapesAppDelegate.m in Sources */,
+				9EEB149A19016D9600C9BB41 /* ShapesPath.m in Sources */,
 				9EEB146A1901303D00C9BB41 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +469,7 @@
 				9EEB148E1901303D00C9BB41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EEB148F1901303D00C9BB41 /* Build configuration list for PBXNativeTarget "ShapesTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +478,7 @@
 				9EEB14911901303D00C9BB41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

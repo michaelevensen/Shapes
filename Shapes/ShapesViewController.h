@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShapesView.h"
 
 @interface ShapesViewController : UIViewController
+
+@property float touchInterval;
+@property ShapesView *currentShape;
 
 @end

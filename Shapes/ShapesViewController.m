@@ -29,9 +29,6 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // Event touches
-//    NSArray *touchesArray = [touches allObjects];
-    
     // All touches
     NSSet *allTouches = [event allTouches];
     
@@ -60,14 +57,14 @@
     // All touches
     NSSet *allTouches = [event allTouches];
     
-    // Event touches
-//    NSArray *touchesArray = [touches allObjects];
+    // Touches Array
+    NSArray *touchesArray = [allTouches allObjects];
     
     // Set new Points for Path
     if ([[event touchesForView:self.view] count]>1) {
         
         // Make Path from Touch Points
-        [self.currentShape makePathFromPoints:allTouches];
+        [self.currentShape makePathFromPoints:touchesArray];
     }
 }
 

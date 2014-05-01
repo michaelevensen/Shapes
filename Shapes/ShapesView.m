@@ -39,31 +39,35 @@
 }
 
 // Make UIBezierPath from UITouch points
-- (UIBezierPath *)makePathFromPoints:(NSArray *)points
+- (UIBezierPath *)makePathFromPoints:(NSSet *)points
 {
     // Make new Bezier
-    [self setPath: [UIBezierPath bezierPath]];
+//    [self setPath: [UIBezierPath bezierPath]];
+//    
+//    // Iterate through points
+//    for (UITouch *touch in points) {
+//        
+//        // Get CGPoint
+//        CGPoint point = [touch locationInView:nil];
+//        
+//        // Move to point for first point
+//        if([self.path isEmpty]) {
+//            
+//            [self.path moveToPoint:point];
+//        }
+//        else {
+//            
+//            // Add line to point
+//            [self.path addLineToPoint:point];
+//        }
+//    }
     
-    // Iterate through points
-    for (UITouch *touch in points) {
-        
-        // Get CGPoint
-        CGPoint point = [touch locationInView:nil];
-        
-        // Move to point for first point
-        if([self.path isEmpty]) {
-            
-            [self.path moveToPoint:point];
-        }
-        else {
-            
-            // Add line to point
-            [self.path addLineToPoint:point];
-        }
-    }
+//    NSLog(@"%lu", (unsigned long)[points count]);
     
     // Close Path
-    // ??
+//    if([points count]>2) {
+//        [self.path closePath];
+//    }
     
     // Assign Path to Shape
     [self.shape setPath:self.path.CGPath];

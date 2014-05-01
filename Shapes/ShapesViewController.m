@@ -29,58 +29,70 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSArray *touchesArray = [touches allObjects];
+    // Event touches
+//    NSArray *touchesArray = [touches allObjects];
     
-    // New Shape View
-    [self setCurrentShape:[[ShapesView alloc] init]];
+    // All touches
+    NSSet *allTouches = [event allTouches];
     
     /*
-     * Multiple Touches Began
+     * Make new ShapeView on First Tap
+     * - Don't make new Shapes for taps beyond 1
+     * - If taps are >1 then just change the path
      */
-    if ([[event touchesForView:self.view] count]>1) {
+    if([allTouches count]==1) {
         
-        // Make Path from Touch Points
-        [self.currentShape makePathFromPoints:touchesArray];
+        // New Shape View
+        [self setCurrentShape:[[ShapesView alloc] init]];
+        
+        // Add Shape to View
+        [self.view addSubview:self.currentShape];
     }
     
-    // Add Shape to View
-    [self.view addSubview:self.currentShape];
+//    else {
+//        // Make Path from Touch Points
+//        [self.currentShape makePathFromPoints:allTouches];
+//    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSArray *touchesArray = [touches allObjects];
+    // All touches
+    NSSet *allTouches = [event allTouches];
+    
+    // Event touches
+//    NSArray *touchesArray = [touches allObjects];
     
     // Set new Points for Path
     if ([[event touchesForView:self.view] count]>1) {
         
         // Make Path from Touch Points
-        [self.currentShape makePathFromPoints:touchesArray];
+        [self.currentShape makePathFromPoints:allTouches];
     }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    float ti = 0.5; // The threshold between touch releases
-    NSArray *touchesArray = [touches allObjects];
-    NSTimeInterval t = [touchesArray.lastObject timestamp];
-    
-    // Compare touchesEnded with previous touches (to group multiple touch releases)
-    if((t-self.touchInterval)>ti) {
-        
-        // If more than one touch release
-        if ([touchesArray count]>1) {
-            
-            //
-        }
-        else {
-            
-           //
-        }
-    }
-    
-    // Get timestamp for grouped touchesEnded event
-    self.touchInterval = t;
+//    float ti = 0.5; // The threshold between touch releases
+//    NSArray *touchesArray = [touches allObjects];
+//    NSTimeInterval t = [touchesArray.lastObject timestamp];
+//    
+//    // Compare touchesEnded with previous touches (to group multiple touch releases)
+//    if((t-self.touchInterval)>ti) {
+//        
+//        // If more than one touch release
+//        if ([touchesArray count]>1) {
+//            
+//            //
+//        }
+//        else {
+//            
+//           //
+//        }
+//    }
+//    
+//    // Get timestamp for grouped touchesEnded event
+//    self.touchInterval = t;
 }
 
 @end

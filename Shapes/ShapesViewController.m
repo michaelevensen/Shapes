@@ -59,28 +59,28 @@
     }
 }
 
-//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    float ti = 0.5; // The threshold between touch releases
-//    NSArray *touchesArray = [touches allObjects];
-//    NSTimeInterval t = [touchesArray.lastObject timestamp];
-//    
-//    // Compare touchesEnded with previous touches (to group multiple touch releases)
-//    if((t-self.touchInterval)>ti) {
-//        
-//        // If more than one touch release
-//        if ([touchesArray count]>1) {
-//            
-//            //
-//        }
-//        else {
-//            
-//           //
-//        }
-//    }
-//    
-//    // Get timestamp for grouped touchesEnded event
-//    self.touchInterval = t;
-//}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    float ti = 0.5; // The threshold between touch releases
+    NSArray *touchesArray = [touches allObjects];
+    NSTimeInterval t = [touchesArray.lastObject timestamp];
+    
+    // Compare touchesEnded with previous touches (to group multiple touch releases)
+    if((t-self.touchInterval)>ti) {
+        
+        // If more than one touch release
+        if ([touchesArray count]>1) {
+            
+            //
+        }
+        else {
+            
+           //
+        }
+    }
+    
+    // Get timestamp for grouped touchesEnded event
+    self.touchInterval = t;
+}
 
 @end

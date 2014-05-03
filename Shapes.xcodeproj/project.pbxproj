@@ -22,7 +22,6 @@
 		9EEB147F1901303D00C9BB41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB14611901303D00C9BB41 /* UIKit.framework */; };
 		9EEB14871901303D00C9BB41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB14851901303D00C9BB41 /* InfoPlist.strings */; };
 		9EEB14891901303D00C9BB41 /* ShapesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB14881901303D00C9BB41 /* ShapesTests.m */; };
-		9EEB149A19016D9600C9BB41 /* ShapesPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB149919016D9600C9BB41 /* ShapesPath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +56,6 @@
 		9EEB14841901303D00C9BB41 /* ShapesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShapesTests-Info.plist"; sourceTree = "<group>"; };
 		9EEB14861901303D00C9BB41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EEB14881901303D00C9BB41 /* ShapesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapesTests.m; sourceTree = "<group>"; };
-		9EEB149819016D9600C9BB41 /* ShapesPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapesPath.h; sourceTree = "<group>"; };
-		9EEB149919016D9600C9BB41 /* ShapesPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapesPath.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +122,6 @@
 				9EEB14731901303D00C9BB41 /* ShapesViewController.m */,
 				9EC8B5FE1912605500A06507 /* ShapesView.h */,
 				9EC8B5FF1912605500A06507 /* ShapesView.m */,
-				9EEB149819016D9600C9BB41 /* ShapesPath.h */,
-				9EEB149919016D9600C9BB41 /* ShapesPath.m */,
 				9EEB14751901303D00C9BB41 /* Images.xcassets */,
 				9EEB14641901303D00C9BB41 /* Supporting Files */,
 			);
@@ -263,7 +258,6 @@
 				9EEB14741901303D00C9BB41 /* ShapesViewController.m in Sources */,
 				9EC8B6001912605500A06507 /* ShapesView.m in Sources */,
 				9EEB146E1901303D00C9BB41 /* ShapesAppDelegate.m in Sources */,
-				9EEB149A19016D9600C9BB41 /* ShapesPath.m in Sources */,
 				9EEB146A1901303D00C9BB41 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

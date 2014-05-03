@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C02055819144E36006C33D2 /* PathGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C02055719144E36006C33D2 /* PathGestureRecognizer.m */; };
 		9EC8B6001912605500A06507 /* ShapesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC8B5FF1912605500A06507 /* ShapesView.m */; };
 		9EEB145E1901303D00C9BB41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB145D1901303D00C9BB41 /* Foundation.framework */; };
 		9EEB14601901303D00C9BB41 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB145F1901303D00C9BB41 /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C02055619144E36006C33D2 /* PathGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathGestureRecognizer.h; sourceTree = "<group>"; };
+		6C02055719144E36006C33D2 /* PathGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathGestureRecognizer.m; sourceTree = "<group>"; };
 		9EC8B5FE1912605500A06507 /* ShapesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapesView.h; sourceTree = "<group>"; };
 		9EC8B5FF1912605500A06507 /* ShapesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapesView.m; sourceTree = "<group>"; };
 		9EEB145A1901303D00C9BB41 /* Shapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,13 +118,15 @@
 		9EEB14631901303D00C9BB41 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
-				9EEB146C1901303D00C9BB41 /* ShapesAppDelegate.h */,
-				9EEB146D1901303D00C9BB41 /* ShapesAppDelegate.m */,
-				9EEB146F1901303D00C9BB41 /* Main.storyboard */,
+				6C02055619144E36006C33D2 /* PathGestureRecognizer.h */,
+				6C02055719144E36006C33D2 /* PathGestureRecognizer.m */,
 				9EEB14721901303D00C9BB41 /* ShapesViewController.h */,
 				9EEB14731901303D00C9BB41 /* ShapesViewController.m */,
 				9EC8B5FE1912605500A06507 /* ShapesView.h */,
 				9EC8B5FF1912605500A06507 /* ShapesView.m */,
+				9EEB146C1901303D00C9BB41 /* ShapesAppDelegate.h */,
+				9EEB146D1901303D00C9BB41 /* ShapesAppDelegate.m */,
+				9EEB146F1901303D00C9BB41 /* Main.storyboard */,
 				9EEB14751901303D00C9BB41 /* Images.xcassets */,
 				9EEB14641901303D00C9BB41 /* Supporting Files */,
 			);
@@ -257,6 +262,7 @@
 			files = (
 				9EEB14741901303D00C9BB41 /* ShapesViewController.m in Sources */,
 				9EC8B6001912605500A06507 /* ShapesView.m in Sources */,
+				6C02055819144E36006C33D2 /* PathGestureRecognizer.m in Sources */,
 				9EEB146E1901303D00C9BB41 /* ShapesAppDelegate.m in Sources */,
 				9EEB146A1901303D00C9BB41 /* main.m in Sources */,
 			);

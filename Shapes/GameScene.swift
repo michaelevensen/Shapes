@@ -10,7 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    var nodes = [Shape]() // node array
+    var currentNodesArray = [Shape]() // holds current nodes
+    
     var nodeSizeMin: CGFloat = 20.0
     var nodeSizeMax: CGFloat = 500.0
     
@@ -37,24 +38,16 @@ class GameScene: SKScene {
             
             for index in 0..<touchesArray.count {
                 
-                /**
-                    Make Nodes 
-                    - For pairs of points
-                */
+                // for every second
                 if (index + 1) % 2 == 0 {
                     
-                    // get point info
-                    var touchPoints: (a: CGPoint, b: CGPoint) = (touchesArray[index-1].locationInNode(self), touchesArray[index].locationInNode(self))
-                    var info = touchPoints.a.getInfoToPoint(touchPoints.b)
+                    // make node
+                    var node = makeShapeFromPoints(touchesArray[index-1].locationInNode(self), b: touchesArray[index].locationInNode(self))
                     
-                    // find size based on points
-                    var size = CGSize(width: info.pointDistance, height: max(nodeSizeMin, nodeSizeMax-info.pointDistance))
-               
-                    // make
-                    var node = Shape(size: size, position: info.mid, angle: info.pointAngle.toRadians())
+                    // keep track of current nodes
+                    currentNodesArray += node
                     
-                    // add node
-                    nodes += node // node array
+                    // add
                     self.addChild(node)
                 }
             }
@@ -82,32 +75,37 @@ class GameScene: SKScene {
                 */
                 if (index + 1) % 2 == 0 {
                     
-                    // get point info
-                    var touchPoints: (a: CGPoint, b: CGPoint) = (touchesArray[index-1].locationInNode(self), touchesArray[index].locationInNode(self))
-                    var info = touchPoints.a.getInfoToPoint(touchPoints.b)
+                    // remove previous node
+                    currentNodesArray[nodeCount].removeFromParent()
                     
-                    // find size based on points
-                    var size = CGSize(width: info.pointDistance, height: max(nodeSizeMin, nodeSizeMax-info.pointDistance))
+                    // make new node
+                    var node = makeShapeFromPoints(touchesArray[index-1].locationInNode(self), b: touchesArray[index].locationInNode(self))
                     
-                    for node in nodes {
-                        
-                        node.makeNodes(size, position: info.mid, angle: info.pointAngle.toRadians())
-                    }
+                    // update current nodes
+                    currentNodesArray[nodeCount] = node
+                    
+                    // add
+                    self.addChild(node)
+                    
+                    nodeCount++
                 }
             }
         }
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+
+        currentNodesArray = []
         
-//        if !nodes.isEmpty {
+        
+//        if !nodesArray.isEmpty {
 //            
-//            for shapeNode in nodes {
+//            for node in nodesArray {
 //                
-//                if shapeNode.outerNode.physicsBody.affectedByGravity==false {
+//                if node.outerNode.physicsBody.affectedByGravity==false {
 //                 
 //                    // active physics
-//                    shapeNode.setPhysics(true)
+//                    node.setPhysics(true)
 //                }
 //            }
 //        }
@@ -125,6 +123,17 @@ class GameScene: SKScene {
 //            }
 //        }
 //    }
+    
+    func makeShapeFromPoints(a: CGPoint, b: CGPoint) -> Shape {
+        
+        // get point info
+        var info = a.getInfoToPoint(b)
+        
+        // find size based on points
+        var size = CGSize(width: info.pointDistance, height: max(nodeSizeMin, nodeSizeMax-info.pointDistance))
+        
+        return Shape(size: size, position: info.mid, angle: info.pointAngle.toRadians())
+    }
 
     func copyPhysics(node: Shape) {
         

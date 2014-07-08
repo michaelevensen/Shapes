@@ -36,19 +36,27 @@ class GameScene: SKScene {
         */
         if touchesArray.count % 2 == 0 {
             
+//            var nodeCount = 0
+            
             for index in 0..<touchesArray.count {
                 
                 // for every second
                 if (index + 1) % 2 == 0 {
                     
-                    // make node
-                    var node = makeShapeFromPoints(touchesArray[index-1].locationInNode(self), b: touchesArray[index].locationInNode(self))
-                    
-                    // keep track of current nodes
-                    currentNodesArray += node
-                    
-                    // add
-                    self.addChild(node)
+                    // check if node is already in array
+                    if currentNodesArray.count > index - 1 {
+                        
+                        println(index)
+                        
+                        // make node
+                        var node = makeShapeFromPoints(touchesArray[index-1].locationInNode(self), b: touchesArray[index].locationInNode(self))
+
+                        // keep track of current nodes
+                        currentNodesArray += node
+                        
+                        // add
+                        self.addChild(node)
+                    }
                 }
             }
         }
@@ -69,26 +77,25 @@ class GameScene: SKScene {
             
             for index in 0..<touchesArray.count {
                 
-                /**
-                    Make Nodes
-                    - For pairs of points
-                */
-                if (index + 1) % 2 == 0 {
-                    
-                    // remove previous node
-                    currentNodesArray[nodeCount].removeFromParent()
-                    
-                    // make new node
-                    var node = makeShapeFromPoints(touchesArray[index-1].locationInNode(self), b: touchesArray[index].locationInNode(self))
-                    
-                    // update current nodes
-                    currentNodesArray[nodeCount] = node
-                    
-                    // add
-                    self.addChild(node)
-                    
-                    nodeCount++
-                }
+//                 println("moved: \((index + 1) % 2)")
+                
+                // for every second
+//                if (index + 1) % 2 == 0 {
+//
+//                    // remove previous node
+//                    currentNodesArray[nodeCount].removeFromParent()
+//                    
+//                    // make new node
+//                    var node = makeShapeFromPoints(touchesArray[index-1].locationInNode(self), b: touchesArray[index].locationInNode(self))
+//                    
+//                    // update current nodes
+//                    currentNodesArray[nodeCount] = node
+//                    
+//                    // add
+//                    self.addChild(node)
+//                    
+//                    nodeCount++
+//                }
             }
         }
     }

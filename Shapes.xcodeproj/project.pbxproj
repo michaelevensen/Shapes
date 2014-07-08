@@ -7,167 +7,130 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C02055819144E36006C33D2 /* PathGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C02055719144E36006C33D2 /* PathGestureRecognizer.m */; };
-		6C02055B19144FBD006C33D2 /* ShapeLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C02055A19144FBD006C33D2 /* ShapeLayerView.m */; };
-		6C02055E19144FE8006C33D2 /* ShapeLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C02055D19144FE8006C33D2 /* ShapeLayerViewController.m */; };
-		9EC8B6001912605500A06507 /* ShapesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC8B5FF1912605500A06507 /* ShapesView.m */; };
-		9EEB145E1901303D00C9BB41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB145D1901303D00C9BB41 /* Foundation.framework */; };
-		9EEB14601901303D00C9BB41 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB145F1901303D00C9BB41 /* CoreGraphics.framework */; };
-		9EEB14621901303D00C9BB41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB14611901303D00C9BB41 /* UIKit.framework */; };
-		9EEB14681901303D00C9BB41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB14661901303D00C9BB41 /* InfoPlist.strings */; };
-		9EEB146A1901303D00C9BB41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB14691901303D00C9BB41 /* main.m */; };
-		9EEB146E1901303D00C9BB41 /* ShapesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB146D1901303D00C9BB41 /* ShapesAppDelegate.m */; };
-		9EEB14711901303D00C9BB41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB146F1901303D00C9BB41 /* Main.storyboard */; };
-		9EEB14741901303D00C9BB41 /* ShapesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB14731901303D00C9BB41 /* ShapesViewController.m */; };
-		9EEB14761901303D00C9BB41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB14751901303D00C9BB41 /* Images.xcassets */; };
-		9EEB147D1901303D00C9BB41 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB147C1901303D00C9BB41 /* XCTest.framework */; };
-		9EEB147E1901303D00C9BB41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB145D1901303D00C9BB41 /* Foundation.framework */; };
-		9EEB147F1901303D00C9BB41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEB14611901303D00C9BB41 /* UIKit.framework */; };
-		9EEB14871901303D00C9BB41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB14851901303D00C9BB41 /* InfoPlist.strings */; };
-		9EEB14891901303D00C9BB41 /* ShapesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB14881901303D00C9BB41 /* ShapesTests.m */; };
+		9E07885A196A916D00C14AB7 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E078859196A916D00C14AB7 /* Shape.swift */; };
+		9E12877B196554A900E218CC /* UIColor+Shorthands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E12877A196554A900E218CC /* UIColor+Shorthands.swift */; };
+		9E6AADD31965AB8700C1EA09 /* CGPoint+Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6AADD21965AB8700C1EA09 /* CGPoint+Coordinates.swift */; };
+		9E6AADD51965AC1200C1EA09 /* CGFloat+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6AADD41965AC1200C1EA09 /* CGFloat+Conversion.swift */; };
+		9E6E69C9194CC4AA0003D3EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E69C8194CC4AA0003D3EB /* AppDelegate.swift */; };
+		9E6E69CB194CC4AA0003D3EB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E69CA194CC4AA0003D3EB /* GameScene.sks */; };
+		9E6E69CD194CC4AA0003D3EB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E69CC194CC4AA0003D3EB /* GameScene.swift */; };
+		9E6E69CF194CC4AA0003D3EB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E69CE194CC4AA0003D3EB /* GameViewController.swift */; };
+		9E6E69D2194CC4AA0003D3EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E69D0194CC4AA0003D3EB /* Main.storyboard */; };
+		9E6E69D4194CC4AA0003D3EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E69D3194CC4AA0003D3EB /* Images.xcassets */; };
+		9E6E69E0194CC4AA0003D3EB /* ShapesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E69DF194CC4AA0003D3EB /* ShapesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9EEB14801901303D00C9BB41 /* PBXContainerItemProxy */ = {
+		9E6E69DA194CC4AA0003D3EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9EEB14521901303D00C9BB41 /* Project object */;
+			containerPortal = 9E6E69BB194CC4AA0003D3EB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9EEB14591901303D00C9BB41;
+			remoteGlobalIDString = 9E6E69C2194CC4AA0003D3EB;
 			remoteInfo = Shapes;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6C02055619144E36006C33D2 /* PathGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathGestureRecognizer.h; sourceTree = "<group>"; };
-		6C02055719144E36006C33D2 /* PathGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathGestureRecognizer.m; sourceTree = "<group>"; };
-		6C02055919144FBD006C33D2 /* ShapeLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeLayerView.h; sourceTree = "<group>"; };
-		6C02055A19144FBD006C33D2 /* ShapeLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerView.m; sourceTree = "<group>"; };
-		6C02055C19144FE8006C33D2 /* ShapeLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeLayerViewController.h; sourceTree = "<group>"; };
-		6C02055D19144FE8006C33D2 /* ShapeLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerViewController.m; sourceTree = "<group>"; };
-		9EC8B5FE1912605500A06507 /* ShapesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapesView.h; sourceTree = "<group>"; };
-		9EC8B5FF1912605500A06507 /* ShapesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapesView.m; sourceTree = "<group>"; };
-		9EEB145A1901303D00C9BB41 /* Shapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EEB145D1901303D00C9BB41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9EEB145F1901303D00C9BB41 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9EEB14611901303D00C9BB41 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9EEB14651901303D00C9BB41 /* Shapes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Shapes-Info.plist"; sourceTree = "<group>"; };
-		9EEB14671901303D00C9BB41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9EEB14691901303D00C9BB41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9EEB146B1901303D00C9BB41 /* Shapes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Shapes-Prefix.pch"; sourceTree = "<group>"; };
-		9EEB146C1901303D00C9BB41 /* ShapesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapesAppDelegate.h; sourceTree = "<group>"; };
-		9EEB146D1901303D00C9BB41 /* ShapesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapesAppDelegate.m; sourceTree = "<group>"; };
-		9EEB14701901303D00C9BB41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9EEB14721901303D00C9BB41 /* ShapesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapesViewController.h; sourceTree = "<group>"; };
-		9EEB14731901303D00C9BB41 /* ShapesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapesViewController.m; sourceTree = "<group>"; };
-		9EEB14751901303D00C9BB41 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9EEB147B1901303D00C9BB41 /* ShapesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShapesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EEB147C1901303D00C9BB41 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9EEB14841901303D00C9BB41 /* ShapesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShapesTests-Info.plist"; sourceTree = "<group>"; };
-		9EEB14861901303D00C9BB41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9EEB14881901303D00C9BB41 /* ShapesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapesTests.m; sourceTree = "<group>"; };
+		9E078859196A916D00C14AB7 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		9E12877A196554A900E218CC /* UIColor+Shorthands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Shorthands.swift"; sourceTree = "<group>"; };
+		9E6AADD21965AB8700C1EA09 /* CGPoint+Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Coordinates.swift"; sourceTree = "<group>"; };
+		9E6AADD41965AC1200C1EA09 /* CGFloat+Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Conversion.swift"; sourceTree = "<group>"; };
+		9E6E69C3194CC4AA0003D3EB /* Shapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E6E69C7194CC4AA0003D3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E6E69C8194CC4AA0003D3EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9E6E69CA194CC4AA0003D3EB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		9E6E69CC194CC4AA0003D3EB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		9E6E69CE194CC4AA0003D3EB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		9E6E69D1194CC4AA0003D3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9E6E69D3194CC4AA0003D3EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9E6E69D9194CC4AA0003D3EB /* ShapesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShapesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E6E69DE194CC4AA0003D3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E6E69DF194CC4AA0003D3EB /* ShapesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9EEB14571901303D00C9BB41 /* Frameworks */ = {
+		9E6E69C0194CC4AA0003D3EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EEB14601901303D00C9BB41 /* CoreGraphics.framework in Frameworks */,
-				9EEB14621901303D00C9BB41 /* UIKit.framework in Frameworks */,
-				9EEB145E1901303D00C9BB41 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9EEB14781901303D00C9BB41 /* Frameworks */ = {
+		9E6E69D6194CC4AA0003D3EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EEB147D1901303D00C9BB41 /* XCTest.framework in Frameworks */,
-				9EEB147F1901303D00C9BB41 /* UIKit.framework in Frameworks */,
-				9EEB147E1901303D00C9BB41 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9EEB14511901303D00C9BB41 = {
+		9E1287791965549400E218CC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9EEB14631901303D00C9BB41 /* Shapes */,
-				9EEB14821901303D00C9BB41 /* ShapesTests */,
-				9EEB145C1901303D00C9BB41 /* Frameworks */,
-				9EEB145B1901303D00C9BB41 /* Products */,
+				9E12877A196554A900E218CC /* UIColor+Shorthands.swift */,
+				9E6AADD21965AB8700C1EA09 /* CGPoint+Coordinates.swift */,
+				9E6AADD41965AC1200C1EA09 /* CGFloat+Conversion.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9E6E69BA194CC4AA0003D3EB = {
+			isa = PBXGroup;
+			children = (
+				9E6E69C5194CC4AA0003D3EB /* Shapes */,
+				9E6E69DC194CC4AA0003D3EB /* ShapesTests */,
+				9E6E69C4194CC4AA0003D3EB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9EEB145B1901303D00C9BB41 /* Products */ = {
+		9E6E69C4194CC4AA0003D3EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9EEB145A1901303D00C9BB41 /* Shapes.app */,
-				9EEB147B1901303D00C9BB41 /* ShapesTests.xctest */,
+				9E6E69C3194CC4AA0003D3EB /* Shapes.app */,
+				9E6E69D9194CC4AA0003D3EB /* ShapesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9EEB145C1901303D00C9BB41 /* Frameworks */ = {
+		9E6E69C5194CC4AA0003D3EB /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
-				9EEB145D1901303D00C9BB41 /* Foundation.framework */,
-				9EEB145F1901303D00C9BB41 /* CoreGraphics.framework */,
-				9EEB14611901303D00C9BB41 /* UIKit.framework */,
-				9EEB147C1901303D00C9BB41 /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9EEB14631901303D00C9BB41 /* Shapes */ = {
-			isa = PBXGroup;
-			children = (
-				6C02055619144E36006C33D2 /* PathGestureRecognizer.h */,
-				6C02055719144E36006C33D2 /* PathGestureRecognizer.m */,
-				9EEB14721901303D00C9BB41 /* ShapesViewController.h */,
-				9EEB14731901303D00C9BB41 /* ShapesViewController.m */,
-				9EC8B5FE1912605500A06507 /* ShapesView.h */,
-				9EC8B5FF1912605500A06507 /* ShapesView.m */,
-				6C02055919144FBD006C33D2 /* ShapeLayerView.h */,
-				6C02055A19144FBD006C33D2 /* ShapeLayerView.m */,
-				6C02055C19144FE8006C33D2 /* ShapeLayerViewController.h */,
-				6C02055D19144FE8006C33D2 /* ShapeLayerViewController.m */,
-				9EEB146C1901303D00C9BB41 /* ShapesAppDelegate.h */,
-				9EEB146D1901303D00C9BB41 /* ShapesAppDelegate.m */,
-				9EEB146F1901303D00C9BB41 /* Main.storyboard */,
-				9EEB14751901303D00C9BB41 /* Images.xcassets */,
-				9EEB14641901303D00C9BB41 /* Supporting Files */,
+				9E1287791965549400E218CC /* Extensions */,
+				9E6E69C8194CC4AA0003D3EB /* AppDelegate.swift */,
+				9E6E69CA194CC4AA0003D3EB /* GameScene.sks */,
+				9E6E69CC194CC4AA0003D3EB /* GameScene.swift */,
+				9E078859196A916D00C14AB7 /* Shape.swift */,
+				9E6E69CE194CC4AA0003D3EB /* GameViewController.swift */,
+				9E6E69D0194CC4AA0003D3EB /* Main.storyboard */,
+				9E6E69D3194CC4AA0003D3EB /* Images.xcassets */,
+				9E6E69C6194CC4AA0003D3EB /* Supporting Files */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
 		};
-		9EEB14641901303D00C9BB41 /* Supporting Files */ = {
+		9E6E69C6194CC4AA0003D3EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9EEB14651901303D00C9BB41 /* Shapes-Info.plist */,
-				9EEB14661901303D00C9BB41 /* InfoPlist.strings */,
-				9EEB14691901303D00C9BB41 /* main.m */,
-				9EEB146B1901303D00C9BB41 /* Shapes-Prefix.pch */,
+				9E6E69C7194CC4AA0003D3EB /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9EEB14821901303D00C9BB41 /* ShapesTests */ = {
+		9E6E69DC194CC4AA0003D3EB /* ShapesTests */ = {
 			isa = PBXGroup;
 			children = (
-				9EEB14881901303D00C9BB41 /* ShapesTests.m */,
-				9EEB14831901303D00C9BB41 /* Supporting Files */,
+				9E6E69DF194CC4AA0003D3EB /* ShapesTests.swift */,
+				9E6E69DD194CC4AA0003D3EB /* Supporting Files */,
 			);
 			path = ShapesTests;
 			sourceTree = "<group>";
 		};
-		9EEB14831901303D00C9BB41 /* Supporting Files */ = {
+		9E6E69DD194CC4AA0003D3EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9EEB14841901303D00C9BB41 /* ShapesTests-Info.plist */,
-				9EEB14851901303D00C9BB41 /* InfoPlist.strings */,
+				9E6E69DE194CC4AA0003D3EB /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -175,13 +138,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9EEB14591901303D00C9BB41 /* Shapes */ = {
+		9E6E69C2194CC4AA0003D3EB /* Shapes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EEB148C1901303D00C9BB41 /* Build configuration list for PBXNativeTarget "Shapes" */;
+			buildConfigurationList = 9E6E69E3194CC4AA0003D3EB /* Build configuration list for PBXNativeTarget "Shapes" */;
 			buildPhases = (
-				9EEB14561901303D00C9BB41 /* Sources */,
-				9EEB14571901303D00C9BB41 /* Frameworks */,
-				9EEB14581901303D00C9BB41 /* Resources */,
+				9E6E69BF194CC4AA0003D3EB /* Sources */,
+				9E6E69C0194CC4AA0003D3EB /* Frameworks */,
+				9E6E69C1194CC4AA0003D3EB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -189,46 +152,46 @@
 			);
 			name = Shapes;
 			productName = Shapes;
-			productReference = 9EEB145A1901303D00C9BB41 /* Shapes.app */;
+			productReference = 9E6E69C3194CC4AA0003D3EB /* Shapes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9EEB147A1901303D00C9BB41 /* ShapesTests */ = {
+		9E6E69D8194CC4AA0003D3EB /* ShapesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EEB148F1901303D00C9BB41 /* Build configuration list for PBXNativeTarget "ShapesTests" */;
+			buildConfigurationList = 9E6E69E6194CC4AA0003D3EB /* Build configuration list for PBXNativeTarget "ShapesTests" */;
 			buildPhases = (
-				9EEB14771901303D00C9BB41 /* Sources */,
-				9EEB14781901303D00C9BB41 /* Frameworks */,
-				9EEB14791901303D00C9BB41 /* Resources */,
+				9E6E69D5194CC4AA0003D3EB /* Sources */,
+				9E6E69D6194CC4AA0003D3EB /* Frameworks */,
+				9E6E69D7194CC4AA0003D3EB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9EEB14811901303D00C9BB41 /* PBXTargetDependency */,
+				9E6E69DB194CC4AA0003D3EB /* PBXTargetDependency */,
 			);
 			name = ShapesTests;
 			productName = ShapesTests;
-			productReference = 9EEB147B1901303D00C9BB41 /* ShapesTests.xctest */;
+			productReference = 9E6E69D9194CC4AA0003D3EB /* ShapesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9EEB14521901303D00C9BB41 /* Project object */ = {
+		9E6E69BB194CC4AA0003D3EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = Shapes;
-				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = SoundCloud;
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Michael Nino Evensen";
 				TargetAttributes = {
-					9EEB14591901303D00C9BB41 = {
-						DevelopmentTeam = Q443VA859C;
+					9E6E69C2194CC4AA0003D3EB = {
+						CreatedOnToolsVersion = 6.0;
 					};
-					9EEB147A1901303D00C9BB41 = {
-						TestTargetID = 9EEB14591901303D00C9BB41;
+					9E6E69D8194CC4AA0003D3EB = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 9E6E69C2194CC4AA0003D3EB;
 					};
 				};
 			};
-			buildConfigurationList = 9EEB14551901303D00C9BB41 /* Build configuration list for PBXProject "Shapes" */;
+			buildConfigurationList = 9E6E69BE194CC4AA0003D3EB /* Build configuration list for PBXProject "Shapes" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -236,100 +199,83 @@
 				en,
 				Base,
 			);
-			mainGroup = 9EEB14511901303D00C9BB41;
-			productRefGroup = 9EEB145B1901303D00C9BB41 /* Products */;
+			mainGroup = 9E6E69BA194CC4AA0003D3EB;
+			productRefGroup = 9E6E69C4194CC4AA0003D3EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9EEB14591901303D00C9BB41 /* Shapes */,
-				9EEB147A1901303D00C9BB41 /* ShapesTests */,
+				9E6E69C2194CC4AA0003D3EB /* Shapes */,
+				9E6E69D8194CC4AA0003D3EB /* ShapesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9EEB14581901303D00C9BB41 /* Resources */ = {
+		9E6E69C1194CC4AA0003D3EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EEB14761901303D00C9BB41 /* Images.xcassets in Resources */,
-				9EEB14681901303D00C9BB41 /* InfoPlist.strings in Resources */,
-				9EEB14711901303D00C9BB41 /* Main.storyboard in Resources */,
+				9E6E69D4194CC4AA0003D3EB /* Images.xcassets in Resources */,
+				9E6E69CB194CC4AA0003D3EB /* GameScene.sks in Resources */,
+				9E6E69D2194CC4AA0003D3EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9EEB14791901303D00C9BB41 /* Resources */ = {
+		9E6E69D7194CC4AA0003D3EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EEB14871901303D00C9BB41 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9EEB14561901303D00C9BB41 /* Sources */ = {
+		9E6E69BF194CC4AA0003D3EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EEB14741901303D00C9BB41 /* ShapesViewController.m in Sources */,
-				9EC8B6001912605500A06507 /* ShapesView.m in Sources */,
-				6C02055819144E36006C33D2 /* PathGestureRecognizer.m in Sources */,
-				9EEB146E1901303D00C9BB41 /* ShapesAppDelegate.m in Sources */,
-				6C02055B19144FBD006C33D2 /* ShapeLayerView.m in Sources */,
-				9EEB146A1901303D00C9BB41 /* main.m in Sources */,
-				6C02055E19144FE8006C33D2 /* ShapeLayerViewController.m in Sources */,
+				9E6AADD51965AC1200C1EA09 /* CGFloat+Conversion.swift in Sources */,
+				9E6E69CD194CC4AA0003D3EB /* GameScene.swift in Sources */,
+				9E12877B196554A900E218CC /* UIColor+Shorthands.swift in Sources */,
+				9E07885A196A916D00C14AB7 /* Shape.swift in Sources */,
+				9E6AADD31965AB8700C1EA09 /* CGPoint+Coordinates.swift in Sources */,
+				9E6E69CF194CC4AA0003D3EB /* GameViewController.swift in Sources */,
+				9E6E69C9194CC4AA0003D3EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9EEB14771901303D00C9BB41 /* Sources */ = {
+		9E6E69D5194CC4AA0003D3EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EEB14891901303D00C9BB41 /* ShapesTests.m in Sources */,
+				9E6E69E0194CC4AA0003D3EB /* ShapesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9EEB14811901303D00C9BB41 /* PBXTargetDependency */ = {
+		9E6E69DB194CC4AA0003D3EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9EEB14591901303D00C9BB41 /* Shapes */;
-			targetProxy = 9EEB14801901303D00C9BB41 /* PBXContainerItemProxy */;
+			target = 9E6E69C2194CC4AA0003D3EB /* Shapes */;
+			targetProxy = 9E6E69DA194CC4AA0003D3EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9EEB14661901303D00C9BB41 /* InfoPlist.strings */ = {
+		9E6E69D0194CC4AA0003D3EB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9EEB14671901303D00C9BB41 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		9EEB146F1901303D00C9BB41 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9EEB14701901303D00C9BB41 /* Base */,
+				9E6E69D1194CC4AA0003D3EB /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9EEB14851901303D00C9BB41 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9EEB14861901303D00C9BB41 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9EEB148A1901303D00C9BB41 /* Debug */ = {
+		9E6E69E1194CC4AA0003D3EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -344,9 +290,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -361,13 +309,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
-		9EEB148B1901303D00C9BB41 /* Release */ = {
+		9E6E69E2194CC4AA0003D3EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -382,10 +333,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -393,115 +346,103 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		9EEB148D1901303D00C9BB41 /* Debug */ = {
+		9E6E69E4194CC4AA0003D3EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Shapes/Shapes-Prefix.pch";
-				INFOPLIST_FILE = "Shapes/Shapes-Info.plist";
+				INFOPLIST_FILE = Shapes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		9EEB148E1901303D00C9BB41 /* Release */ = {
+		9E6E69E5194CC4AA0003D3EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Shapes/Shapes-Prefix.pch";
-				INFOPLIST_FILE = "Shapes/Shapes-Info.plist";
+				INFOPLIST_FILE = Shapes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		9EEB14901901303D00C9BB41 /* Debug */ = {
+		9E6E69E7194CC4AA0003D3EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Shapes.app/Shapes";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Shapes/Shapes-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ShapesTests/ShapesTests-Info.plist";
+				INFOPLIST_FILE = ShapesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		9EEB14911901303D00C9BB41 /* Release */ = {
+		9E6E69E8194CC4AA0003D3EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Shapes.app/Shapes";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Shapes/Shapes-Prefix.pch";
-				INFOPLIST_FILE = "ShapesTests/ShapesTests-Info.plist";
+				INFOPLIST_FILE = ShapesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9EEB14551901303D00C9BB41 /* Build configuration list for PBXProject "Shapes" */ = {
+		9E6E69BE194CC4AA0003D3EB /* Build configuration list for PBXProject "Shapes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9EEB148A1901303D00C9BB41 /* Debug */,
-				9EEB148B1901303D00C9BB41 /* Release */,
+				9E6E69E1194CC4AA0003D3EB /* Debug */,
+				9E6E69E2194CC4AA0003D3EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EEB148C1901303D00C9BB41 /* Build configuration list for PBXNativeTarget "Shapes" */ = {
+		9E6E69E3194CC4AA0003D3EB /* Build configuration list for PBXNativeTarget "Shapes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9EEB148D1901303D00C9BB41 /* Debug */,
-				9EEB148E1901303D00C9BB41 /* Release */,
+				9E6E69E4194CC4AA0003D3EB /* Debug */,
+				9E6E69E5194CC4AA0003D3EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EEB148F1901303D00C9BB41 /* Build configuration list for PBXNativeTarget "ShapesTests" */ = {
+		9E6E69E6194CC4AA0003D3EB /* Build configuration list for PBXNativeTarget "ShapesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9EEB14901901303D00C9BB41 /* Debug */,
-				9EEB14911901303D00C9BB41 /* Release */,
+				9E6E69E7194CC4AA0003D3EB /* Debug */,
+				9E6E69E8194CC4AA0003D3EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9EEB14521901303D00C9BB41 /* Project object */;
+	rootObject = 9E6E69BB194CC4AA0003D3EB /* Project object */;
 }

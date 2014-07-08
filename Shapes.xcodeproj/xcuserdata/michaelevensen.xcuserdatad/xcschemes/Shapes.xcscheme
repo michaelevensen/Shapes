@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9EEB14591901303D00C9BB41"
+               BlueprintIdentifier = "9E6E69C2194CC4AA0003D3EB"
                BuildableName = "Shapes.app"
                BlueprintName = "Shapes"
                ReferencedContainer = "container:Shapes.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9EEB147A1901303D00C9BB41"
+               BlueprintIdentifier = "9E6E69D8194CC4AA0003D3EB"
                BuildableName = "ShapesTests.xctest"
                BlueprintName = "ShapesTests"
                ReferencedContainer = "container:Shapes.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9EEB14591901303D00C9BB41"
+            BlueprintIdentifier = "9E6E69C2194CC4AA0003D3EB"
             BuildableName = "Shapes.app"
             BlueprintName = "Shapes"
             ReferencedContainer = "container:Shapes.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9EEB14591901303D00C9BB41"
+            BlueprintIdentifier = "9E6E69C2194CC4AA0003D3EB"
             BuildableName = "Shapes.app"
             BlueprintName = "Shapes"
             ReferencedContainer = "container:Shapes.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9EEB14591901303D00C9BB41"
+            BlueprintIdentifier = "9E6E69C2194CC4AA0003D3EB"
             BuildableName = "Shapes.app"
             BlueprintName = "Shapes"
             ReferencedContainer = "container:Shapes.xcodeproj">

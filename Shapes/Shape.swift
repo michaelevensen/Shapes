@@ -13,7 +13,7 @@ class Shape: SKSpriteNode {
     let innerNodeSize: CGSize = CGSize(width: 50.0, height: 50.0)
     
     // color
-    var outerNodeColor: UIColor = UIColor.whiteColor()
+    var outerNodeColor: UIColor = UIColor.randomNiceColor()
     var innerNodeColor: UIColor = UIColor.blackColor()
     
     // nodes
@@ -34,11 +34,11 @@ class Shape: SKSpriteNode {
         /**
             Make Node
         */
-        var node = SKShapeNode(rectOfSize: size, cornerRadius: size.width/2)
+        var node = SKShapeNode(rectOfSize: size)
         
         // set physicsbody
         setPhysicsBodyForNode(node, volume: volume, bitMask: bitMask)
-        
+
         // set color
         setColorForNode(node, color: (color ? color! : UIColor.randomNiceColor()))
         
@@ -111,7 +111,7 @@ class Shape: SKSpriteNode {
         }
         
         // add inner node
-        outerEdgeLoop.addChild(innerNode)
+//        outerEdgeLoop.addChild(innerNode)
         
         /**
             Transform

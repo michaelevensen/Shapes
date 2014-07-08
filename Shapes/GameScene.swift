@@ -33,66 +33,67 @@ class GameScene: SKScene {
         /**
             Pair touches in two
         */
-        var touchPairsArray = pairTouches(touchesArray)
-        
-        // make nodes for pairs (if exist)
-        if touchPairsArray.count > 0 {
+        if touchesArray.count % 2 == 0 {
             
-            for (index, touchPair: [UITouch]) in touchPairsArray {
-                
-                // get point info between points
-                var firstPoint = touchPair[0].locationInNode(self)
-                var secondPoint = touchPair[1].locationInNode(self)
-                
-                var info = firstPoint.getInfoToPoint(secondPoint)
+            for index in 0..<touchesArray.count {
                 
                 /**
-                    Make Node
+                    Make Nodes 
+                    - For pairs of points
                 */
-                var h = max(nodeSizeMin, nodeSizeMax-info.pointDistance)
-                var size = CGSize(width: h, height: info.pointDistance)
-                
-                var node = Shape(size: size, position: info.mid, angle: info.pointAngle.toRadians())
-                
-                // add to nodes array
-                nodes += node
-                
-                self.addChild(node)
+                if (index + 1) % 2 == 0 {
+                    
+                    // get point info
+                    var touchPoints: (a: CGPoint, b: CGPoint) = (touchesArray[index-1].locationInNode(self), touchesArray[index].locationInNode(self))
+                    var info = touchPoints.a.getInfoToPoint(touchPoints.b)
+                    
+                    // find size based on points
+                    var size = CGSize(width: info.pointDistance, height: max(nodeSizeMin, nodeSizeMax-info.pointDistance))
+               
+                    // make
+                    var node = Shape(size: size, position: info.mid, angle: info.pointAngle.toRadians())
+                    
+                    // add node
+                    nodes += node // node array
+                    self.addChild(node)
+                }
             }
         }
     }
-
+    
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
-        
+
         // all touches
         var touchesArray = event.allTouches().allObjects
         
         /**
             Pair touches in two
         */
-        var touchPairsArray = pairTouches(touchesArray)
-        
-        // make nodes for pairs (if exist)
-        if touchPairsArray.count > 0 {
+        if touchesArray.count % 2 == 0 {
+           
+            // node count
+            var nodeCount = 0
             
-            for (index, touchPair: [UITouch]) in touchPairsArray {
-              
-                // find node
-                var node = nodes[index]
-                
-                // get point info between points
-                var firstPoint = touchPair[0].locationInNode(self)
-                var secondPoint = touchPair[1].locationInNode(self)
-                
-                var info = firstPoint.getInfoToPoint(secondPoint)
+            for index in 0..<touchesArray.count {
                 
                 /**
-                    Make nodes with new coordinates
+                    Make Nodes
+                    - For pairs of points
                 */
-                var h = max(nodeSizeMin, nodeSizeMax-info.pointDistance)
-                var size = CGSize(width: info.pointDistance, height: h)
-                
-                node.makeNodes(size, position: info.mid, angle: info.pointAngle.toRadians())
+                if (index + 1) % 2 == 0 {
+                    
+                    // get point info
+                    var touchPoints: (a: CGPoint, b: CGPoint) = (touchesArray[index-1].locationInNode(self), touchesArray[index].locationInNode(self))
+                    var info = touchPoints.a.getInfoToPoint(touchPoints.b)
+                    
+                    // find size based on points
+                    var size = CGSize(width: info.pointDistance, height: max(nodeSizeMin, nodeSizeMax-info.pointDistance))
+                    
+                    for node in nodes {
+                        
+                        node.makeNodes(size, position: info.mid, angle: info.pointAngle.toRadians())
+                    }
+                }
             }
         }
     }
@@ -111,51 +112,19 @@ class GameScene: SKScene {
 //            }
 //        }
     }
-    
-//    func pairTouches(touchesArray: NSArray) -> Dictionary<Int, [UITouch]> {
-//        
-//        // dictionary for touches
-//        var paired = Dictionary<Int, [UITouch]>()
-//        
-//        // pairing for two touches at a time
-//        if touchesArray.count % 2 == 0 {
-//            
-//            var dictIndex = 0 // index
-//            
-//            for index in 0..<touchesArray.count {
-//                
-//                // for every second index
-//                if (index+1) % 2 == 0 {
-//                    
-//                    // add pair
-//                    paired[dictIndex] = [touchesArray[index] as UITouch, touchesArray[index-index] as UITouch]
+//    override func didSimulatePhysics() {
 //
-//                    // increase dictIndex
-//                    dictIndex++
-//                }
+//        /**
+//            Copy Physics for EdgeLoop Nodes
+//            - This can't be the best way of doing this?
+//        */
+//        if !nodes.isEmpty {
+//        
+//            for node in nodes {
+//                copyPhysics(node)
 //            }
 //        }
-//        else {
-//            
-//            // uneven amount of touch pairs
-//        }
-//        
-//        return paired
 //    }
-    
-    override func didSimulatePhysics() {
-
-        /**
-            Copy Physics for EdgeLoop Nodes
-            - This can't be the best way of doing this?
-        */
-        if !nodes.isEmpty {
-        
-            for node in nodes {
-                copyPhysics(node)
-            }
-        }
-    }
 
     func copyPhysics(node: Shape) {
         

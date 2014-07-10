@@ -43,7 +43,7 @@ extension CGPoint {
         return CGPoint(x: mx, y: my)
     }
     
-    func getInfoToPoint(point: CGPoint) -> (pointDistance: CGFloat, pointAngle: CGFloat, mid: CGPoint) {
+    func getInfoToPoint(point: CGPoint) -> (pointDistance: CGFloat, pointAngle: CGFloat, pointCenter: CGPoint) {
       
         return (self.distanceToPoint(point), self.angleToPoint(point), self.midToPoint(point))
     }

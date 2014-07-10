@@ -54,9 +54,15 @@ class GameScene: SKScene {
         
             let location = touch.locationInNode(self)
         
-            // match position of current touch point to location of shape
-            // this is impossible given that the Shape only takes one position
-            
+            for node in currentNodesArray {
+                
+                println(node.points)
+             
+//                if Int(location.x, location.y) == Int(node.points) {
+//                    
+//                    println("is part of: \(node)")
+//                }
+            }
         }
         
         for index in 0..<currentNodesArray.count {

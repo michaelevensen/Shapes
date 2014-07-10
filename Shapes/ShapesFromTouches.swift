@@ -17,10 +17,7 @@
 import UIKit
 
 class ShapesFromTouches {
-    
-    var nodeSizeMin: CGFloat = 20.0
-    var nodeSizeMax: CGFloat = 500.0
-    
+  
     init(touches: NSSet!) {
         
         

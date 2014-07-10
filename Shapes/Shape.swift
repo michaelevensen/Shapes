@@ -10,10 +10,15 @@ import SpriteKit
 
 class Shape: SKSpriteNode {
     
+    // size for inner node
     let innerNodeSize: CGSize = CGSize(width: 50.0, height: 50.0)
     
-    // position
-    var shapePosition: (CGPoint, CGPoint) = (CGPointZero, CGPointZero) // touple for two points
+    // external variable for reference
+    var points: (a: CGPoint, b: CGPoint) = (CGPointZero, CGPointZero)
+    
+    // max and minimum for Shape
+    var nodeSizeMin: CGFloat = 20.0
+    var nodeSizeMax: CGFloat = 500.0
     
     // color
     let outerNodeColor: UIColor = UIColor.randomNiceColor()
@@ -24,12 +29,12 @@ class Shape: SKSpriteNode {
     var outerEdgeLoop: SKShapeNode!
     var innerNode: SKShapeNode!
     
-    init(size: CGSize, points: (a: CGPoint, b: CGPoint), angle: CGFloat) {
+    init(points: (CGPoint, CGPoint)) {
         
         super.init(texture: nil, color: nil, size: size)
         
         // Init Nodes
-        makeNodes(size, points: (points.a, points.b) , angle: angle)
+        makeNodes(points)
     }
     
     func setupNode(size: CGSize, volume: Bool, color: UIColor?, bitMask: UInt32) -> SKShapeNode {
@@ -85,10 +90,12 @@ class Shape: SKSpriteNode {
         innerNode.physicsBody.affectedByGravity = state
     }
     
-    func makeNodes(size: CGSize, points: (a: CGPoint, b: CGPoint), angle: CGFloat) -> Shape {
-        
-        // save position
-        shapePosition = points
+    func updatePoints(newPoints: (a: CGPoint, b: CGPoint)) {
+     
+        points = newPoints
+    }
+    
+    func makeNodes(points: (a: CGPoint, b: CGPoint)) -> Shape {
         
         if self.children.count > 0 {
 
@@ -99,11 +106,21 @@ class Shape: SKSpriteNode {
             self.removeAllChildren()
         }
         
+        // set points
+        updatePoints(points)
+        
+        // get point info
+        let info = points.a.getInfoToPoint(points.b)
+        
+        // find size from point distance
+        let h = max(nodeSizeMin, nodeSizeMax-info.pointDistance)
+        let nodeSize = CGSize(width: h, height: info.pointDistance)
+        
         /**
             Make Nodes to match Size, Position and Angle
         */
-        outerNode = setupNode(size, volume: true, color: outerNodeColor, bitMask: 1)
-        outerEdgeLoop = setupNode(size, volume: false, color: UIColor.clearColor(), bitMask: 2)
+        outerNode = setupNode(nodeSize, volume: true, color: outerNodeColor, bitMask: 1)
+        outerEdgeLoop = setupNode(nodeSize, volume: false, color: UIColor.clearColor(), bitMask: 2)
         
         // add update nodes
         self.addChild(outerNode)
@@ -122,13 +139,13 @@ class Shape: SKSpriteNode {
         /**
             Transform
         */
-        self.size = size
+        self.size = nodeSize
         
-        // position (centered from two points)
-        self.position = points.a.midToPoint(points.b)
+        // position (centered from points)
+        self.position = info.pointCenter
         
         // angle (note: in radians)
-        self.zRotation = angle
+        self.zRotation = info.pointAngle
         
         return self
     }

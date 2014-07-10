@@ -18,6 +18,7 @@
 		9E6E69D2194CC4AA0003D3EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E69D0194CC4AA0003D3EB /* Main.storyboard */; };
 		9E6E69D4194CC4AA0003D3EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E69D3194CC4AA0003D3EB /* Images.xcassets */; };
 		9E6E69E0194CC4AA0003D3EB /* ShapesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E69DF194CC4AA0003D3EB /* ShapesTests.swift */; };
+		9ED0A777196E88E600490639 /* ShapesFromTouches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED0A776196E88E600490639 /* ShapesFromTouches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		9E6E69D9194CC4AA0003D3EB /* ShapesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShapesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6E69DE194CC4AA0003D3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E6E69DF194CC4AA0003D3EB /* ShapesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesTests.swift; sourceTree = "<group>"; };
+		9ED0A776196E88E600490639 /* ShapesFromTouches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapesFromTouches.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				9E6E69CA194CC4AA0003D3EB /* GameScene.sks */,
 				9E6E69CC194CC4AA0003D3EB /* GameScene.swift */,
 				9E078859196A916D00C14AB7 /* Shape.swift */,
+				9ED0A776196E88E600490639 /* ShapesFromTouches.swift */,
 				9E6E69CE194CC4AA0003D3EB /* GameViewController.swift */,
 				9E6E69D0194CC4AA0003D3EB /* Main.storyboard */,
 				9E6E69D3194CC4AA0003D3EB /* Images.xcassets */,
@@ -242,6 +245,7 @@
 				9E6AADD31965AB8700C1EA09 /* CGPoint+Coordinates.swift in Sources */,
 				9E6E69CF194CC4AA0003D3EB /* GameViewController.swift in Sources */,
 				9E6E69C9194CC4AA0003D3EB /* AppDelegate.swift in Sources */,
+				9ED0A777196E88E600490639 /* ShapesFromTouches.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

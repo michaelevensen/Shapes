@@ -10,10 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    var currentNodesArray = [Shape]() // holds current nodes
-    
-    var nodeSizeMin: CGFloat = 20.0
-    var nodeSizeMax: CGFloat = 500.0
+    var totalNodesArray = [Shape]() // all nodes on scene (excluding current)
+    var currentNodesArray = [Shape]() // currently being manipulated
     
     override func didMoveToView(view: SKView) {
         
@@ -28,120 +26,63 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
        
-        // all touches
-        var touchesArray = event.allTouches().allObjects
-       
-        /**
-            Pair touches in two
-        */
-        if touchesArray.count % 2 == 0 {
-            
-//            var nodeCount = 0
-            
-            for index in 0..<touchesArray.count {
-                
-                // for every second
-                if (index + 1) % 2 == 0 {
-                    
-                    // check if node is already in array
-                    if currentNodesArray.count > index - 1 {
-                        
-                        println(index)
-                        
-                        // make node
-                        var node = makeShapeFromPoints(touchesArray[index-1].locationInNode(self), b: touchesArray[index].locationInNode(self))
+        var shapes = ShapesFromTouches(touches: touches)
 
-                        // keep track of current nodes
-                        currentNodesArray += node
-                        
-                        // add
-                        self.addChild(node)
-                    }
-                }
+        // check for pairs
+        if shapes {
+        
+            for node in shapes {
+                
+                // add current nodes to array
+                currentNodesArray += node
+                
+                // add to scene
+                self.addChild(node)
             }
         }
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
 
-        // all touches
-        var touchesArray = event.allTouches().allObjects
+       
+    }
+    
+    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+ 
         
-        /**
-            Pair touches in two
-        */
-        if touchesArray.count % 2 == 0 {
-           
-            // node count
-            var nodeCount = 0
+        for touch: AnyObject in touches.allObjects {
+        
+            let location = touch.locationInNode(self)
+        
+            // match position of current touch point to location of shape
+            // this is impossible given that the Shape only takes one position
             
-            for index in 0..<touchesArray.count {
-                
-//                 println("moved: \((index + 1) % 2)")
-                
-                // for every second
-//                if (index + 1) % 2 == 0 {
-//
-//                    // remove previous node
-//                    currentNodesArray[nodeCount].removeFromParent()
-//                    
-//                    // make new node
-//                    var node = makeShapeFromPoints(touchesArray[index-1].locationInNode(self), b: touchesArray[index].locationInNode(self))
-//                    
-//                    // update current nodes
-//                    currentNodesArray[nodeCount] = node
-//                    
-//                    // add
-//                    self.addChild(node)
-//                    
-//                    nodeCount++
-//                }
+        }
+        
+        for index in 0..<currentNodesArray.count {
+            
+            // add to total
+            totalNodesArray += currentNodesArray[index]
+            
+            // remove from current
+            currentNodesArray.removeAtIndex(index)
+        }
+    }
+    
+    override func didSimulatePhysics() {
+
+        /**
+            Copy Physics for EdgeLoop Nodes
+            - This can't be the best way of doing this?
+        */
+        if !totalNodesArray.isEmpty {
+        
+            for node in totalNodesArray {
+                copyPhysics(node)
             }
         }
     }
     
-    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-
-        currentNodesArray = []
-        
-        
-//        if !nodesArray.isEmpty {
-//            
-//            for node in nodesArray {
-//                
-//                if node.outerNode.physicsBody.affectedByGravity==false {
-//                 
-//                    // active physics
-//                    node.setPhysics(true)
-//                }
-//            }
-//        }
-    }
-//    override func didSimulatePhysics() {
-//
-//        /**
-//            Copy Physics for EdgeLoop Nodes
-//            - This can't be the best way of doing this?
-//        */
-//        if !nodes.isEmpty {
-//        
-//            for node in nodes {
-//                copyPhysics(node)
-//            }
-//        }
-//    }
-    
-    func makeShapeFromPoints(a: CGPoint, b: CGPoint) -> Shape {
-        
-        // get point info
-        var info = a.getInfoToPoint(b)
-        
-        // find size based on points
-        var size = CGSize(width: info.pointDistance, height: max(nodeSizeMin, nodeSizeMax-info.pointDistance))
-        
-        return Shape(size: size, position: info.mid, angle: info.pointAngle.toRadians())
-    }
-
     func copyPhysics(node: Shape) {
         
         node.outerEdgeLoop.position = node.outerNode.position

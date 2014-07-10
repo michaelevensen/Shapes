@@ -12,21 +12,24 @@ class Shape: SKSpriteNode {
     
     let innerNodeSize: CGSize = CGSize(width: 50.0, height: 50.0)
     
+    // position
+    var shapePosition: (CGPoint, CGPoint) = (CGPointZero, CGPointZero) // touple for two points
+    
     // color
-    var outerNodeColor: UIColor = UIColor.randomNiceColor()
-    var innerNodeColor: UIColor = UIColor.blackColor()
+    let outerNodeColor: UIColor = UIColor.randomNiceColor()
+    let innerNodeColor: UIColor = UIColor.blackColor()
     
     // nodes
     var outerNode: SKShapeNode!
     var outerEdgeLoop: SKShapeNode!
     var innerNode: SKShapeNode!
     
-    init(size: CGSize, position: CGPoint, angle: CGFloat) {
+    init(size: CGSize, points: (a: CGPoint, b: CGPoint), angle: CGFloat) {
         
         super.init(texture: nil, color: nil, size: size)
         
         // Init Nodes
-        makeNodes(size, position: position, angle: angle)
+        makeNodes(size, points: (points.a, points.b) , angle: angle)
     }
     
     func setupNode(size: CGSize, volume: Bool, color: UIColor?, bitMask: UInt32) -> SKShapeNode {
@@ -82,7 +85,10 @@ class Shape: SKSpriteNode {
         innerNode.physicsBody.affectedByGravity = state
     }
     
-    func makeNodes(size: CGSize, position: CGPoint, angle: CGFloat) -> Shape {
+    func makeNodes(size: CGSize, points: (a: CGPoint, b: CGPoint), angle: CGFloat) -> Shape {
+        
+        // save position
+        shapePosition = points
         
         if self.children.count > 0 {
 
@@ -118,8 +124,8 @@ class Shape: SKSpriteNode {
         */
         self.size = size
         
-        // position
-        self.position = position
+        // position (centered from two points)
+        self.position = points.a.midToPoint(points.b)
         
         // angle (note: in radians)
         self.zRotation = angle

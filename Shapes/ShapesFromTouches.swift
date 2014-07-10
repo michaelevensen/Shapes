@@ -20,18 +20,13 @@ class ShapesFromTouches {
   
     init(touches: NSSet!) {
         
+        makeArrayOfTouches(touches)
         
     
     }
     
-    func makeShapeFromPoints(a: CGPoint, b: CGPoint) -> Shape {
+    func makeArrayOfTouches(touches: NSSet!) -> Shape {
         
-        // get point info
-        var info = a.getInfoToPoint(b)
-        
-        // find size based on points
-        var size = CGSize(width: info.pointDistance, height: max(nodeSizeMin, nodeSizeMax-info.pointDistance))
-        
-        return Shape(size: size, position: info.mid, angle: info.pointAngle.toRadians())
+        return Shape(fromPoints: (CGPointZero, CGPointZero))
     }
 }

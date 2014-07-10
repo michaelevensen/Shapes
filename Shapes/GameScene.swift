@@ -27,19 +27,21 @@ class GameScene: SKScene {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
        
         var shapes = ShapesFromTouches(touches: touches)
-
-        // check for pairs
-        if shapes {
         
-            for node in shapes {
-                
-                // add current nodes to array
-                currentNodesArray += node
-                
-                // add to scene
-                self.addChild(node)
-            }
-        }
+        println(shapes)
+
+//        // check for pairs
+//        if shapes {
+//        
+//            for node in shapes {
+//                
+//                // add current nodes to array
+//                currentNodesArray += node
+//                
+//                // add to scene
+//                self.addChild(node)
+//            }
+//        }
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
@@ -49,19 +51,16 @@ class GameScene: SKScene {
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
  
-        
+   /**
         for touch: AnyObject in touches.allObjects {
         
             let location = touch.locationInNode(self)
         
             for node in currentNodesArray {
-                
-                println(node.points)
-             
-//                if Int(location.x, location.y) == Int(node.points) {
-//                    
-//                    println("is part of: \(node)")
-//                }
+
+                if (location.x, location.y) == node.nodePoints.a || node.nodePoints.b {
+                    println("touch is part of: \(node)")
+                }
             }
         }
         
@@ -73,6 +72,7 @@ class GameScene: SKScene {
             // remove from current
             currentNodesArray.removeAtIndex(index)
         }
+*/
     }
     
     override func didSimulatePhysics() {

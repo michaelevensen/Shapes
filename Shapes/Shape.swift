@@ -14,7 +14,7 @@ class Shape: SKSpriteNode {
     let innerNodeSize: CGSize = CGSize(width: 50.0, height: 50.0)
     
     // external variable for reference
-    var points: (a: CGPoint, b: CGPoint) = (CGPointZero, CGPointZero)
+    var nodePoints: (a: CGPoint, b: CGPoint) = (CGPointZero, CGPointZero)
     
     // max and minimum for Shape
     var nodeSizeMin: CGFloat = 20.0
@@ -29,12 +29,12 @@ class Shape: SKSpriteNode {
     var outerEdgeLoop: SKShapeNode!
     var innerNode: SKShapeNode!
     
-    init(points: (CGPoint, CGPoint)) {
+    init(fromPoints: (CGPoint, CGPoint)!) {
         
         super.init(texture: nil, color: nil, size: size)
         
         // Init Nodes
-        makeNodes(points)
+        makeNodes(fromPoints)
     }
     
     func setupNode(size: CGSize, volume: Bool, color: UIColor?, bitMask: UInt32) -> SKShapeNode {
@@ -92,10 +92,13 @@ class Shape: SKSpriteNode {
     
     func updatePoints(newPoints: (a: CGPoint, b: CGPoint)) {
      
-        points = newPoints
+        nodePoints = newPoints
     }
     
-    func makeNodes(points: (a: CGPoint, b: CGPoint)) -> Shape {
+    func makeNodes(fromPoints: (a: CGPoint, b: CGPoint)!) -> Shape {
+        
+        // set new points
+        updatePoints(fromPoints)
         
         if self.children.count > 0 {
 
@@ -106,11 +109,8 @@ class Shape: SKSpriteNode {
             self.removeAllChildren()
         }
         
-        // set points
-        updatePoints(points)
-        
-        // get point info
-        let info = points.a.getInfoToPoint(points.b)
+        // get point info from points
+        let info = nodePoints.a.getInfoToPoint(points.b)
         
         // find size from point distance
         let h = max(nodeSizeMin, nodeSizeMax-info.pointDistance)

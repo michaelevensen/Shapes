@@ -10,6 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    var labels = Dictionary<UITouch, SKLabelNode>()
+    
     var totalNodesArray = [Shape]() // all nodes on scene (excluding current)
     var currentNodesArray = [Shape]() // currently being manipulated
     
@@ -26,10 +28,45 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
        
-        var shapes = ShapesFromTouches(touches: touches)
+        var points = [CGPoint]()
         
-        println(shapes)
-
+        // only add per new event
+        for touch: AnyObject in touches.allObjects {
+            
+            // add label
+            var labelStr = String("time: \(touch.timestamp) - previous: \(touch.previousLocationInNode(self)) - current: \(touch.locationInNode(self))")
+            
+            var label = SKLabelNode(text: labelStr)
+            label.position = touch.locationInNode(self)
+            label.position.y += 50.0
+            
+            label.fontSize = 16.0
+            label.fontColor = UIColor.blackColor()
+            
+            // associate label with uitouch
+            labels[touch as UITouch] = label
+            
+            self.addChild(label)
+        }
+        
+//        for touch: AnyObject in event.allTouches().allObjects {
+//            
+//            let location = touch.locationInNode(self)
+//            
+////            println(touchId)
+//            
+//            println("touch \(touchId): \(touch.timestamp)")
+//            
+//            touchId++
+//            
+//            // save location
+//            points += location
+//        }
+        
+        // make shapes from points
+//        let shapes = ShapesFromPoints(pointsArray: points)
+        
+        
 //        // check for pairs
 //        if shapes {
 //        
@@ -46,11 +83,36 @@ class GameScene: SKScene {
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
 
-       
+       for touch: AnyObject in touches.allObjects {
+    
+            var index = labels.indexForKey(touch as UITouch)
+        
+            // remove label
+            var label = labels[index!].1
+            
+            // position label
+            label.position = touch.locationInNode(self)
+            label.position.y += 50.0
+            
+            // set string
+            var labelStr = String("time: \(touch.timestamp) - previous: \(touch.previousLocationInNode(self)) - current: \(touch.locationInNode(self))")
+            label.text = labelStr
+        
+        }
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
- 
+    
+        for touch: AnyObject in touches.allObjects {
+
+            var label = labels.removeValueForKey(touch as UITouch)
+            
+            // remove node
+            self.removeChildrenInArray([label!])
+        }
+    }
+    
+        
    /**
         for touch: AnyObject in touches.allObjects {
         
@@ -73,22 +135,21 @@ class GameScene: SKScene {
             currentNodesArray.removeAtIndex(index)
         }
 */
-    }
-    
-    override func didSimulatePhysics() {
 
-        /**
-            Copy Physics for EdgeLoop Nodes
-            - This can't be the best way of doing this?
-        */
-        if !totalNodesArray.isEmpty {
-        
-            for node in totalNodesArray {
-                copyPhysics(node)
-            }
-        }
-    }
-    
+//    override func didSimulatePhysics() {
+//
+//        /**
+//            Copy Physics for EdgeLoop Nodes
+//            - This can't be the best way of doing this?
+//        */
+//        if !totalNodesArray.isEmpty {
+//        
+//            for node in totalNodesArray {
+//                copyPhysics(node)
+//            }
+//        }
+//    }
+
     func copyPhysics(node: Shape) {
         
         node.outerEdgeLoop.position = node.outerNode.position

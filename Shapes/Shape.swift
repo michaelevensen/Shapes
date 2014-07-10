@@ -29,12 +29,12 @@ class Shape: SKSpriteNode {
     var outerEdgeLoop: SKShapeNode!
     var innerNode: SKShapeNode!
     
-    init(fromPoints: (CGPoint, CGPoint)!) {
+    init(points: (CGPoint, CGPoint)) {
         
-        super.init(texture: nil, color: nil, size: size)
+        super.init(texture: nil, color: nil, size: CGSizeZero)
         
         // Init Nodes
-        makeNodes(fromPoints)
+        makeNodes(fromPoints: points)
     }
     
     func setupNode(size: CGSize, volume: Bool, color: UIColor?, bitMask: UInt32) -> SKShapeNode {
@@ -60,7 +60,7 @@ class Shape: SKSpriteNode {
     }
     
     func setPhysicsBodyForNode(node: SKShapeNode, volume: Bool, bitMask: UInt32?) {
-        
+ 
         if volume {
   
             // With Volume
@@ -95,10 +95,10 @@ class Shape: SKSpriteNode {
         nodePoints = newPoints
     }
     
-    func makeNodes(fromPoints: (a: CGPoint, b: CGPoint)!) -> Shape {
+    func makeNodes(fromPoints points: (a: CGPoint, b: CGPoint)) -> Shape {
         
         // set new points
-        updatePoints(fromPoints)
+        updatePoints(points)
         
         if self.children.count > 0 {
 
@@ -110,7 +110,7 @@ class Shape: SKSpriteNode {
         }
         
         // get point info from points
-        let info = nodePoints.a.getInfoToPoint(points.b)
+        let info = nodePoints.a.getInfoToPoint(nodePoints.b)
         
         // find size from point distance
         let h = max(nodeSizeMin, nodeSizeMax-info.pointDistance)
@@ -145,7 +145,7 @@ class Shape: SKSpriteNode {
         self.position = info.pointCenter
         
         // angle (note: in radians)
-        self.zRotation = info.pointAngle
+        self.zRotation = info.pointAngle.toRadians()
         
         return self
     }

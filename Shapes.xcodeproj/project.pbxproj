@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E07885A196A916D00C14AB7 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E078859196A916D00C14AB7 /* Shape.swift */; };
 		9E12877B196554A900E218CC /* UIColor+Shorthands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E12877A196554A900E218CC /* UIColor+Shorthands.swift */; };
+		9E4EC13C1973D53C009EB07A /* Array+Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4EC13B1973D53C009EB07A /* Array+Pair.swift */; };
 		9E6AADD31965AB8700C1EA09 /* CGPoint+Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6AADD21965AB8700C1EA09 /* CGPoint+Coordinates.swift */; };
 		9E6AADD51965AC1200C1EA09 /* CGFloat+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6AADD41965AC1200C1EA09 /* CGFloat+Conversion.swift */; };
 		9E6E69C9194CC4AA0003D3EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E69C8194CC4AA0003D3EB /* AppDelegate.swift */; };
@@ -18,7 +19,6 @@
 		9E6E69D2194CC4AA0003D3EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E69D0194CC4AA0003D3EB /* Main.storyboard */; };
 		9E6E69D4194CC4AA0003D3EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E69D3194CC4AA0003D3EB /* Images.xcassets */; };
 		9E6E69E0194CC4AA0003D3EB /* ShapesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E69DF194CC4AA0003D3EB /* ShapesTests.swift */; };
-		9ED0A777196E88E600490639 /* ShapesFromPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED0A776196E88E600490639 /* ShapesFromPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +34,7 @@
 /* Begin PBXFileReference section */
 		9E078859196A916D00C14AB7 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		9E12877A196554A900E218CC /* UIColor+Shorthands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Shorthands.swift"; sourceTree = "<group>"; };
+		9E4EC13B1973D53C009EB07A /* Array+Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Pair.swift"; sourceTree = "<group>"; };
 		9E6AADD21965AB8700C1EA09 /* CGPoint+Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Coordinates.swift"; sourceTree = "<group>"; };
 		9E6AADD41965AC1200C1EA09 /* CGFloat+Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Conversion.swift"; sourceTree = "<group>"; };
 		9E6E69C3194CC4AA0003D3EB /* Shapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +48,6 @@
 		9E6E69D9194CC4AA0003D3EB /* ShapesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShapesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6E69DE194CC4AA0003D3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E6E69DF194CC4AA0003D3EB /* ShapesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesTests.swift; sourceTree = "<group>"; };
-		9ED0A776196E88E600490639 /* ShapesFromPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapesFromPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +74,7 @@
 				9E12877A196554A900E218CC /* UIColor+Shorthands.swift */,
 				9E6AADD21965AB8700C1EA09 /* CGPoint+Coordinates.swift */,
 				9E6AADD41965AC1200C1EA09 /* CGFloat+Conversion.swift */,
+				9E4EC13B1973D53C009EB07A /* Array+Pair.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -104,7 +105,6 @@
 				9E6E69CA194CC4AA0003D3EB /* GameScene.sks */,
 				9E6E69CC194CC4AA0003D3EB /* GameScene.swift */,
 				9E078859196A916D00C14AB7 /* Shape.swift */,
-				9ED0A776196E88E600490639 /* ShapesFromPoints.swift */,
 				9E6E69CE194CC4AA0003D3EB /* GameViewController.swift */,
 				9E6E69D0194CC4AA0003D3EB /* Main.storyboard */,
 				9E6E69D3194CC4AA0003D3EB /* Images.xcassets */,
@@ -239,13 +239,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E6AADD51965AC1200C1EA09 /* CGFloat+Conversion.swift in Sources */,
+				9E4EC13C1973D53C009EB07A /* Array+Pair.swift in Sources */,
 				9E6E69CD194CC4AA0003D3EB /* GameScene.swift in Sources */,
 				9E12877B196554A900E218CC /* UIColor+Shorthands.swift in Sources */,
 				9E07885A196A916D00C14AB7 /* Shape.swift in Sources */,
 				9E6AADD31965AB8700C1EA09 /* CGPoint+Coordinates.swift in Sources */,
 				9E6E69CF194CC4AA0003D3EB /* GameViewController.swift in Sources */,
 				9E6E69C9194CC4AA0003D3EB /* AppDelegate.swift in Sources */,
-				9ED0A777196E88E600490639 /* ShapesFromPoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

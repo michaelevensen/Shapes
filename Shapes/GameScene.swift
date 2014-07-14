@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene {
 
-    var touchesDict = Dictionary<UITouch, Shape>()
+    var shapesDict = Dictionary<UITouch, Shape>()
     
     var currentNodesArray = [Shape]() // currently being manipulated
     var totalNodesArray = [Shape]() // all nodes on scene (excluding current)
@@ -28,27 +28,24 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
-        let pairedTouches = event.allTouches().allObjects.pair() // pair all
+        let pairedTouches = event.allTouches().allObjects.pairWithTuples() // pair all
         
 //        let pairedTouches = touches.allObjects.pair()
         
         // make shapes for each pair of touches
         if !pairedTouches.isEmpty {
             
-            for touch in pairedTouches {
+            for touchPair in pairedTouches {
                 
-                // setup points for shape
-                let pointa = touch[0].locationInNode(self)
-                let pointb = touch[1].locationInNode(self)
+                // compose location
+                var location = (touchPair.A.locationInNode(self), touchPair.B.locationInNode(self))
                 
                 // make shape
-                let shape = Shape(points: (pointa, pointb))
+                let shape = Shape(points: location)
                 
-                // keep track of current
-//                currentNodesArray += shape
-                
-                touchesDict[touch[0]] = shape
-                touchesDict[touch[1]] = shape
+                // associate touches with Shape
+                shapesDict[touchPair.A as UITouch] = shape
+                shapesDict[touchPair.B as UITouch] = shape
                 
                 // add to scene
                 self.addChild(shape)
@@ -58,44 +55,29 @@ class GameScene: SKScene {
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
         
-        let pairedTouches = touches.allObjects.pair()
-        
-        // make shapes for each pair of touches
-        if !pairedTouches.isEmpty {
-
-            for (index, touch) in enumerate(pairedTouches) {
-                
-//                touchesDict.indexForKey(<#key: KeyType#>)
-                
-                var index = touchesDict.indexForKey(touch[0] as UITouch)
-                
-                
-//                println( touchesDict[index!].1 )
-                
-                
-//                let shape = currentNodesArray[index]
-                
-                // setup points for shape
-//                let pointa = touch[0].locationInNode(self)
-//                let pointb = touch[1].locationInNode(self)
-//                
-//                // new size and location
-//                let points = (pointa, pointb)
-//                
-//                // update current shape
-//                shape.updateNodes(a: pointa, b: pointb)
-            }
+        for touch: AnyObject in touches.allObjects {
+         
+            // find Shape associated with touch
+            var shapeIndex = shapesDict.indexForKey(touch as UITouch)
+            
+            var shapeReference = shapesDict[shapeIndex!]
+            
+            // find location for new touch
+            var location = touch.locationInNode(self)
+            
+            // find location for old touch
+            var locationOld = shapeReference.0.locationInNode(self)
+            
+            println("A: \(shapeReference.1.points.a) - B: \(shapeReference.1.points.b)")
+            println(location)
+            
+            // update shape
+            shapeReference.1.updateNodes((locationOld, locationOld))
         }
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-        
-    
-//        for touches: AnyObject in touches.allObjects {
-//            
-//            if shape.points.a && shape.points.b ==
-//            
-//        }
+        //
     }
     
 //    override func didSimulatePhysics() {

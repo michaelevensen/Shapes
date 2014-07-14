@@ -34,9 +34,9 @@ extension Array {
         Returns a tuple with pairable values defined by count
         - Pairing defaults to 2
     */
-    func pairWithTuples(count: Int? = 2) -> Array<(T, T)> {
+    func pairWithTuples(count: Int? = 2) -> Array<(A: T, B: T)> {
         
-        var pa: Array<(T,T)> = []
+        var pa: Array<(A: T, B: T)> = []
         var temp: Array<T> = []
         
         for value in self {
